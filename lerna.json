@@ -1,0 +1,19 @@
+{
+  "version": "independent",
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "packages": [
+    "packages/*"
+  ],
+ "command": {
+   "run": {
+     "npmClient": "yarn"
+   },
+   "bootstrap": {
+     "npmClient": "yarn"
+   },
+   "publish": {
+     "npmClient": "yarn"
+   }
+ }
+}

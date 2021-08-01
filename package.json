@@ -1,0 +1,14 @@
+{
+  "name": "@next-sanity-bootstrap/root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "yarn lerna bootstrap && husky install"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "husky": "^7.0.0"
+  }
+}
