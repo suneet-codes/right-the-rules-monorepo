@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y"],
+  "ignorePatterns": [
+    ".eslintrc",
+    "package.json",
+    "tsconfig.json",
+    "public/**/*",
+    "node_modules",
+    "config",
+    "dist",
+    "plugins",
+    "static"
+  ],
+  "rules": {
+    "react/jsx-props-no-spreading": "off"
+  }
+}
