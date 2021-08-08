@@ -5,10 +5,24 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "yarn lerna bootstrap && husky install"
+    "prepare": "yarn lerna bootstrap && husky install",
+    "lint:check:all": "yarn lint:check:frontend && yarn lint:check:backend",
+    "lint:check:frontend": "yarn workspace @right-the-rules/frontend lint:check",
+    "lint:check:backend": "yarn workspace @right-the-rules/backend lint:check",
+    "prettier:check:all": "yarn prettier:check:frontend && yarn prettier:check:backend",
+    "prettier:check:frontend": "yarn workspace @right-the-rules/frontend prettier:check",
+    "prettier:check:backend": "yarn workspace @right-the-rules/backend prettier:check"
   },
   "devDependencies": {
+    "@sun33t/eslint-config": "^1.0.8",
+    "@sun33t/prettier-config": "^1.0.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.21.5",
+    "eslint-plugin-react-hooks": "4",
+    "husky": "^7.0.0",
     "lerna": "^4.0.0",
-    "husky": "^7.0.0"
+    "prettier": "^2.3.2"
   }
 }
