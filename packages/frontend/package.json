@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint:check": "yarn eslint --fix-dry-run \"./**/*.{js,jsx,ts,tsx,json}\"",
-    "lint:fix": "yarn eslint --fix \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:check": "yarn eslint --fix-dry-run \"./**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "yarn eslint --fix \"./**/*.{js,jsx,ts,tsx}\"",
     "prettier:write": "yarn prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
     "prettier:check": "yarn prettier --check \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
     "pre-commit": "lint-staged",
@@ -32,7 +32,7 @@
     "jest": "^27.0.6"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ],
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
