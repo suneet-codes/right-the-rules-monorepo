@@ -1,14 +1,16 @@
 {
   "name": "@right-the-rules/frontend",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "yarn eslint --fix \"./**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "yarn prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "lint:check": "yarn eslint --fix-dry-run \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:fix": "yarn eslint --fix \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "prettier:write": "yarn prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "prettier:check": "yarn prettier --check \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
     "pre-commit": "lint-staged",
     "pre-push": "yarn jest --coverage"
   },
@@ -22,12 +24,12 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "babel-jest": "^27.0.6",
-    "jest": "^27.0.6",
-    "jest-dom": "^4.0.0"
+    "jest": "^27.0.6"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": [
@@ -36,5 +38,19 @@
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "prettier": "@sun33t/prettier-config",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    }
   }
 }

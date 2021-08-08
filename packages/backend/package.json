@@ -1,16 +1,17 @@
 {
   "name": "@right-the-rules/backend",
-  "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "The backend for righttherules.com",
   "main": "package.json",
   "author": "Suneet Misra <hello@suneet.codes>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "lint": "yarn eslint --fix \"./**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "yarn prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "lint:fix": "yarn eslint --fix \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:check": "yarn eslint --fix-dry-run \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "prettier:write": "yarn prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "prettier:check": "yarn prettier --check \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
     "pre-commit": "lint-staged"
   },
   "keywords": [
@@ -29,23 +30,13 @@
     "react-dom": "^17.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4",
+    "@babel/core": "^7.0.0",
+    "@sanity/color": "^2.0",
+    "caniuse-lite": "^1.0.30000697",
     "lint-staged": "^11.1.1",
-    "prettier": "^2.3.2"
-  },
-  "prettier": {
-    "semi": false,
-    "trailingComma": "es5",
-    "jsxSingleQuote": false,
-    "printWidth": 80,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "endOfLine": "auto"
+    "react-is": ">= 16.8.0",
+    "styled-components": "^5.2",
+    "webpack": ">= 1.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": [
@@ -54,5 +45,6 @@
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "prettier": "@sun33t/prettier-config"
 }
