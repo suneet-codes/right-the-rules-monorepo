@@ -40,6 +40,11 @@
     ]
   },
   "prettier": "@sun33t/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@sun33t/eslint-config/javascript/next"
+    ]
+  },
   "jest": {
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
