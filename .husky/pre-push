@@ -1,7 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-git fetch origin dev --quiet && git rebase origin/dev --quiet
-echo "origin dev rebased onto current branch"
-
 yarn run lerna run --concurrency 1 --stream pre-push
